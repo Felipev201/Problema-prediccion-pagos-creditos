@@ -1,4 +1,4 @@
-# Problema-prediccion-pagos-creditos
+# Problema prediccion pagos creditos
 En este desafío su trabajo consiste en implementar un modelo que prediga si un crédito será pagado a tiempo o no.  
 
 1. La clase minoritaria o de interés está representada por 1 (crédito no pagado a tiempo) y la clase mayoritaria por 0 (crédito pagado a tiempo). 

@@ -75,13 +75,19 @@ A continuacion se muestran las matrices de confusion de ambos modelos
 Debido a que estamos analizando un sistema de pagos de crédito, los casos positivos en los que el cliente o empresa no pagó tienen una mayor importancia para los inversionistas, por lo que para este problema la exhaustividad es mas importante que la precisión. Es por eso que se decidió utilizar una beta mayor a 1 para darle mas importancia a la exhaustividad.
 
 Para random forest
+
 La precision en los datos de prueba es: 0.7712
+
 El recall en los datos de prueba es: 0.8426
+
 El F1 en los datos de prueba es: 0.8193
 
 Para red neuronal
+
 La precision en los datos de prueba es: 0.75
+
 El recall en los datos de prueba es: 0.8333
+
 El F1 en los datos de prueba es: 0.8058
 
 ## Conclusion

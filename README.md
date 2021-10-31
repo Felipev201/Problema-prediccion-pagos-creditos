@@ -58,12 +58,33 @@ Los modelos fueron construidos utilizando la libreria [ScikitLearn](https://scik
 Para evaluar la capacidad de predicción del modelo se realiza una prueba del modelo entrenado en un conjunto de datos independiente, el cual el modelo no 'vio' al entrenarse.
 Las métricas de evaluacion tanto para el modelo de red neuronal como el de random forest, se utilizaron las fórmulas de precision y exhaustividad asi como la metrica de F que es una combinacion de ambas métricas, las métricas se definen de la siguiente manera
 
-<img src="https://render.githubusercontent.com/render/math?math=Precision = \frac{vp}{vp+fp}">
+<img src="https://latex.codecogs.com/svg.image?Precision&space;=&space;\frac{vp}{vp&plus;fp}" title="Precision = \frac{vp}{vp+fp}" />
 
+<img src="https://latex.codecogs.com/svg.image?Exhaustividad&space;=&space;\frac{vp}{vp&plus;fn}" title="Exhaustividad = \frac{vp}{vp+fn}" />
 
-<img src="https://render.githubusercontent.com/render/math?math=Exhaustividad = \frac{vp}{vp+fn}">
-
-
-<img src="https://render.githubusercontent.com/render/math?math=F(\beta) = (1+\beta^2)(\frac{precision \times exhaustividad}{\beta^2 precision + exhaustividad})">
+<img src="https://latex.codecogs.com/svg.image?F(\beta)&space;=&space;(1&plus;\beta^2)(\frac{precision&space;\times&space;exhaustividad}{\beta^2&space;precision&space;&plus;&space;exhaustividad})" title="F(\beta) = (1+\beta^2)(\frac{precision \times exhaustividad}{\beta^2 precision + exhaustividad})" />
 
 Donde vp significa verdaderos positivos, fp falsos positivos (casos que son negativos pero fueron predichos como positivos) y fn falsos negativos (casos que eran positivos pero fueron clasificados como negativos).
+
+## Resultados
+A continuacion se muestran las matrices de confusion de ambos modelos
+
+![](Imagenes/Resultados.png)
+![](Imagenes/Resultados_rn.png)
+
+Debido a que estamos analizando un sistema de pagos de crédito, los casos positivos en los que el cliente o empresa no pagó tienen una mayor importancia para los inversionistas, por lo que para este problema la exhaustividad es mas importante que la precisión. Es por eso que se decidió utilizar una beta mayor a 1 para darle mas importancia a la exhaustividad.
+
+Para random forest
+La precision en los datos de prueba es: 0.7712
+El recall en los datos de prueba es: 0.8426
+El F1 en los datos de prueba es: 0.8193
+
+Para red neuronal
+La precision en los datos de prueba es: 0.75
+El recall en los datos de prueba es: 0.8333
+El F1 en los datos de prueba es: 0.8058
+
+## Conclusion
+
+El modelo de random forest arrojó un F con un valor de 0.82, lo cual indica que el modelo utilizado tiene una alta capacidad de predecir de manera correcta si un cliente va a pagar o no el crédito que se le dió.
+
